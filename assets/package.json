@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "cash-dom": "^8.1.5",
+    "flowbite": "^2.3.0"
+  }
+}
