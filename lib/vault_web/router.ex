@@ -22,6 +22,8 @@ defmodule VaultWeb.Router do
     get "/step3", PageController, :step3
     get "/step4", PageController, :step4
     get "/step5", PageController, :step5
+
+    post "/step3", PageController, :step3p
   end
 
   # Other scopes may use custom stacks.

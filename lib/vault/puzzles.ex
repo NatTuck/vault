@@ -7,4 +7,12 @@ defmodule Vault.Puzzles do
       {aa, bb, aa + bb}
     end
   end
+
+  def random_password(len) do
+    Vault.Words.read_words()
+    |> Enum.filter(&(String.length(&1) == len))
+    |> Enum.shuffle()
+    |> hd()
+    |> String.trim()
+  end
 end

@@ -5,16 +5,16 @@
 
 <p>Prove you're human by solving the following math problems:</p>
 
-<form action="/step3" method="post">
+<.form action="/step3" method="post">
 
   <%= for {aa, bb, sum} <- @add_pairs do %>
   <p class="problem my-2">
     <span class="operand"><%= aa %></span>
     <span class="operator">+</span>
     <span class="operand"><%= bb %></span> =
-    <input class="num-input" type="text" name={ "sum-#{sum}" } style="max-width: 3em" />
+    <input class="num-input" type="text" name={ "sums[#{sum}]" } style="max-width: 3em" />
   </p>
   <% end %>
 
   <p><.button id="form-submit">Submit</.button></p>
-</form>
+</.form>

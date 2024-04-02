@@ -45,3 +45,11 @@ liveSocket.connect();
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket;
 
+
+import $ from 'cash-dom';
+
+function init() {
+  console.log("Hello, Vault");
+}
+
+$(init);

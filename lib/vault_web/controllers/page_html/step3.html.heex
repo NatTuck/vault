@@ -1,0 +1,16 @@
+
+<.header>Step 3</.header>
+
+<p>Enter the password. One word, 8 lowercase characters.</p>
+
+<p>Your guess: <%= @guess %></p>
+<p>Correct: <%= @correct %></p>
+<p>Feedback: <span id="password-feedback"><%= @feedback %></span></p>
+
+<form action="/step3">
+  <div class="m-4">
+    <input type="text" name="pass" />
+  </div>
+  <p><.button id="form-submit">Submit</.button></p>
+</form>
+
