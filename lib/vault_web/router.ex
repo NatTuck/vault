@@ -18,7 +18,10 @@ defmodule VaultWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    get "/pin", PageController, :pin
+    get "/step2", PageController, :step2
+    get "/step3", PageController, :step3
+    get "/step4", PageController, :step4
+    get "/step5", PageController, :step5
   end
 
   # Other scopes may use custom stacks.

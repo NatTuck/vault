@@ -2,24 +2,26 @@ defmodule VaultWeb.PageController do
   use VaultWeb, :controller
 
   def home(conn, _params) do
-    # The home page is often custom made,
-    # so skip the default app layout.
     render(conn, :home)
   end
 
-  def pin(conn, %{"pin" => pin}) do
-    if pin == "7821" do
-      conn
-      |> put_flash(:info, "Correct PIN")
-      |> redirect(to: ~p"/")
-    else
-      conn
-      |> put_flash(:error, "Bad PIN")
-      |> redirect(to: ~p"/pin")
+  def step2(conn, %{"team" => team}) do
+    case Integer.parse(team) do
+      {team_no, ""} ->
+        add_pairs = Vault.Puzzles.add_pairs()
+
+        conn
+        |> put_session(:team, team_no)
+        |> render(:step2, team: team_no, add_pairs: add_pairs)
+      _else ->
+        conn
+        |> put_flash(:error, "Bad team #")
+        |> redirect(to: ~p"/")
     end
   end
 
-  def pin(conn, params) do
-    render(conn, :pin)
+  def step3(conn, params) do
+    IO.inspect(params)
+    render(conn, :step3)
   end
 end
